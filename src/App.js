@@ -4,6 +4,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Home from './pages/Home';
 import Login from './pages/Login';
+import Cadastro from './pages/Cadastro';
 import AuthRedirect from './components/AuthRedirect';
 import { login } from './redux/userSlice';
 import './App.css';
@@ -17,6 +18,7 @@ function App() {
           {/* Rotas Públicas */}
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<LoginComponent />} />
+          <Route path="/cadastro" element={<Cadastro />} />
 
            {/* Rotas Privadas */}
           <Route element={<PrivateRoutes />}>
