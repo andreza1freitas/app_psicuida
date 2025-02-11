@@ -10,6 +10,13 @@ import { login, logout } from './redux/userSlice';
 import Logout from './pages/Logout';
 import Dashboard from './pages/Dashboard';
 import Menu from './pages/Menu';
+import Ansioso from './pages/Ansioso';
+import Insone from './pages/Insone';
+import Triste from './pages/Triste';
+import Estressado from './pages/Estressado';
+import Inseguro from './pages/Inseguro';
+import Culpado from './pages/Culpado';
+import Desatento from './pages/Desatento';
 import './App.css';
 
 
@@ -28,6 +35,15 @@ function App() {
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/logout" element={<LogoutComponent />} />
           </Route>
+
+          {/* Outras Rotas */}
+          <Route path="/ansioso" element={<Ansioso />} />
+          <Route path="/insone" element={<Insone />} />
+          <Route path="/triste" element={<Triste />} />
+          <Route path="/estressado" element={<Estressado />} />
+          <Route path="/inseguro" element={<Inseguro />} />
+          <Route path="/culpado" element={<Culpado />} />
+          <Route path="/desatento" element={<Desatento />} />
 
           {/* Redirecionamento de Rotas Desconhecidas */}
           <Route path="*" element={<AuthRedirect />} />
