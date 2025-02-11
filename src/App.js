@@ -17,6 +17,7 @@ import Estressado from './pages/Estressado';
 import Inseguro from './pages/Inseguro';
 import Culpado from './pages/Culpado';
 import Desatento from './pages/Desatento';
+import AgendamentoSessao from './pages/AgendamentoSessao';
 import './App.css';
 
 
@@ -34,6 +35,7 @@ function App() {
           <Route element={<PrivateRoutes />}>
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/logout" element={<LogoutComponent />} />
+            <Route path="/agendamento-sessao" element={<AgendamentoSessao />} />
           </Route>
 
           {/* Outras Rotas */}
