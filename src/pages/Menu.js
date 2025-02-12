@@ -21,7 +21,7 @@ const Menu = ({ onLogout }) => {
     '/dashboard': 'PsiCuida',
     '/agendamento-sessao': 'Agendar Sessão Virtual',
     '/auto-ajuda': 'Autoajuda',
-    '/forum-apoio': 'Fórum de Apoio',
+    '/forum': 'Fórum de Apoio',
     '/configuracao': 'Configurações',
     '/conteudo-educacional': 'Conteúdo Educacional',
     '/diario': 'Diário',
@@ -113,7 +113,7 @@ const Menu = ({ onLogout }) => {
               </ListItemIcon>
               <ListItemText primary="Diário" />
             </ListItemButton>
-            <ListItemButton component={Link} to="/forum-apoio">
+            <ListItemButton component={Link} to="/forum">
               <ListItemIcon>
                 <GroupIcon />
               </ListItemIcon>

@@ -19,6 +19,8 @@ import Culpado from './pages/Culpado';
 import Desatento from './pages/Desatento';
 import AgendamentoSessao from './pages/AgendamentoSessao';
 import Diario from './pages/Diario';
+import Forum from './pages/Forum';
+import RespostasForum from './pages/RespostasForum';
 import './App.css';
 
 
@@ -38,6 +40,7 @@ function App() {
             <Route path="/logout" element={<LogoutComponent />} />
             <Route path="/agendamento-sessao" element={<AgendamentoSessao />} />
             <Route path="/diario" element={<Diario />} />
+            <Route path="/forum" element={<Forum />} />
           </Route>
 
           {/* Outras Rotas */}
@@ -48,6 +51,7 @@ function App() {
           <Route path="/inseguro" element={<Inseguro />} />
           <Route path="/culpado" element={<Culpado />} />
           <Route path="/desatento" element={<Desatento />} />
+          <Route path="/perguntas/:id" element={<RespostasForum />} />
 
           {/* Redirecionamento de Rotas Desconhecidas */}
           <Route path="*" element={<AuthRedirect />} />
