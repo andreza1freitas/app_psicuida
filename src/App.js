@@ -18,9 +18,11 @@ import Inseguro from './pages/Inseguro';
 import Culpado from './pages/Culpado';
 import Desatento from './pages/Desatento';
 import AgendamentoSessao from './pages/AgendamentoSessao';
+import SessaoVirtual from './pages/SessaoVirtual';
 import Diario from './pages/Diario';
 import Forum from './pages/Forum';
 import RespostasForum from './pages/RespostasForum';
+import Suporte from './pages/Suporte';
 import './App.css';
 
 
@@ -39,8 +41,10 @@ function App() {
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/logout" element={<LogoutComponent />} />
             <Route path="/agendamento-sessao" element={<AgendamentoSessao />} />
+            <Route path="/sessao-virtual" element={<SessaoVirtual />} />
             <Route path="/diario" element={<Diario />} />
             <Route path="/forum" element={<Forum />} />
+            <Route path="/suporte" element={<Suporte />} />
           </Route>
 
           {/* Outras Rotas */}
