@@ -26,6 +26,7 @@ import Suporte from './pages/Suporte';
 import Configuracao from './pages/Configuracao';
 import EditarPerfil from './pages/EditarPerfil';
 import Notificacoes from './pages/Notificacoes';
+import ScrollControl from './components/ScrollControl';
 
 import './App.css';
 
@@ -34,6 +35,7 @@ function App() {
   return (
     <Provider store={store}>
       <Router>
+      <ScrollControl />
         <Routes>
           {/* Rotas Públicas */}
           <Route path="/" element={<Home />} />

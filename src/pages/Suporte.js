@@ -2,10 +2,13 @@ import React from 'react';
 import { Container, Button, Typography, List, ListItem, Link, Box } from '@mui/material';
 import PhoneIcon from '@mui/icons-material/Phone';
 import ChatIcon from '@mui/icons-material/Chat';
+import ScrollControl from '../components/ScrollControl';
 
 const Suporte = () => {
 
-    return (
+  return (
+     <>
+      <ScrollControl />
         <Container
             sx={{
                 display: 'flex',
@@ -131,6 +134,7 @@ const Suporte = () => {
                 </List>
             </Box>
         </Container>
+        </>
     );
 }
 

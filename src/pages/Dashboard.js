@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, Typography, Button} from '@mui/material';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import ScrollControl from '../components/ScrollControl';
 
 const Dashboard = () => {
     // Recupera o userName e userId do estado global do Redux
@@ -37,7 +38,9 @@ const Dashboard = () => {
     };
 
     return (
-        <Container
+      <>
+       <ScrollControl />
+         <Container
             sx={{
                 display: 'flex',
                 flexDirection: 'column',
@@ -112,6 +115,7 @@ const Dashboard = () => {
                 Desatento(a)
             </Button>
         </Container>
+        </>
     );
 }
 
