@@ -27,7 +27,8 @@ import Configuracao from './pages/Configuracao';
 import EditarPerfil from './pages/EditarPerfil';
 import Notificacoes from './pages/Notificacoes';
 import ScrollControl from './components/ScrollControl';
-
+import AutoAjuda from './pages/AutoAjuda';
+import ConteudoEducacional from './pages/ConteudoEducacional';
 import './App.css';
 
 
@@ -48,6 +49,8 @@ function App() {
             <Route path="/logout" element={<LogoutComponent />} />
             <Route path="/agendamento-sessao" element={<AgendamentoSessao />} />
             <Route path="/sessao-virtual" element={<SessaoVirtual />} />
+            <Route path="/auto-ajuda" element={<AutoAjuda />} />
+            <Route path="/conteudo-educacional" element={<ConteudoEducacional />} />
             <Route path="/diario" element={<Diario />} />
             <Route path="/forum" element={<Forum />} />
             <Route path="/configuracao" element={<Configuracao />} />

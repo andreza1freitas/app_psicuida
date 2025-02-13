@@ -95,7 +95,7 @@ const Notificacoes = () => {
 
                     <Box width="100%" maxWidth="400px">
                         <Box display="flex" justifyContent="space-between" alignItems="center" sx={{ mb: 2, fontWeight: 'bold' }}>
-                            <Typography variant="body1" sx={{ fontWeight: 'bold' }}>Agende sua Sessão</Typography>
+                            <Typography variant="body1" sx={{ fontWeight: 'bold' }}>Lembrete Sessão agendada</Typography>
                             <Switch
                                 checked={!!notificacoes.notificacao1}
                                 onChange={() => handleToggle('notificacao1')}
