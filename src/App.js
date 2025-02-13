@@ -23,6 +23,10 @@ import Diario from './pages/Diario';
 import Forum from './pages/Forum';
 import RespostasForum from './pages/RespostasForum';
 import Suporte from './pages/Suporte';
+import Configuracao from './pages/Configuracao';
+import EditarPerfil from './pages/EditarPerfil';
+import Notificacoes from './pages/Notificacoes';
+
 import './App.css';
 
 
@@ -44,6 +48,7 @@ function App() {
             <Route path="/sessao-virtual" element={<SessaoVirtual />} />
             <Route path="/diario" element={<Diario />} />
             <Route path="/forum" element={<Forum />} />
+            <Route path="/configuracao" element={<Configuracao />} />
             <Route path="/suporte" element={<Suporte />} />
           </Route>
 
@@ -56,6 +61,8 @@ function App() {
           <Route path="/culpado" element={<Culpado />} />
           <Route path="/desatento" element={<Desatento />} />
           <Route path="/perguntas/:id" element={<RespostasForum />} />
+          <Route path="/editar-perfil" element={<EditarPerfil />} />
+          <Route path="/notificacoes" element={<Notificacoes />} />
 
           {/* Redirecionamento de Rotas Desconhecidas */}
           <Route path="*" element={<AuthRedirect />} />
