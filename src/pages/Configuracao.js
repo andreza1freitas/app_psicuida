@@ -19,15 +19,14 @@ const Configuracao = () => {
     const [comentario, setComentario] = useState('');
     const [alreadyReviewed, setAlreadyReviewed] = useState(false); //Já Avaliado
 
-
     const pacienteId = useSelector((state) => state.user.userId);
 
+    // UseEffect para verificar se o paciente já avaliou o aplicativo
     useEffect(() => {
-        // Verifica se o paciente já avaliou quando o diálogo de avaliação for aberto
         if (openRatingDialog) {
             const checkReviewStatus = async () => {
                 try {
-                    const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/avaliacoes`);
+                    const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/avaliacao`);
                     const avaliacoes = await response.json();
                     const pacienteAvaliacao = avaliacoes.find(avaliacao => avaliacao.pacienteId === pacienteId);
 
@@ -48,6 +47,46 @@ const Configuracao = () => {
             checkReviewStatus();
         }
     }, [openRatingDialog, pacienteId]);
+
+    const handleSubmit = async () => {
+        const avaliacaoData = {
+            nota: ratingValue,
+            comentario: comentario,
+            paciente: { id: pacienteId }, 
+        };
+
+        try {
+            const response = await fetch("http://localhost:8080/psicuida-api/v1/avaliacao", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(avaliacaoData),
+            });
+
+            if (response.ok) {
+                setSnackbarMessage('Obrigado pela avaliação');
+                setSnackbarSeverity('success');
+                setOpenSnackbar(true);
+                setRatingValue(0);
+                setComentario('');
+                setAlreadyReviewed(true);
+                handleCloseRatingDialog();
+                setTimeout(() => {
+                    setOpenSnackbar(false);
+                }, 2000);
+            } else {
+                setSnackbarMessage('Erro ao enviar avaliação');
+                setSnackbarSeverity('error');
+                setOpenSnackbar(true);
+            }
+        } catch (error) {
+            console.error("Erro no envio:", error);
+            setSnackbarMessage('Erro ao enviar avaliação');
+            setSnackbarSeverity('error');
+            setOpenSnackbar(true);
+        }
+    };
 
     const handleEditProfile = () => {
         navigate('/editar-perfil');
@@ -72,10 +111,10 @@ const Configuracao = () => {
     const handleOpenRatingDialog = () => {
         // Verifica se o paciente já fez uma avaliação e, caso tenha, preenche os campos.
         if (alreadyReviewed) {
-            setRatingValue(ratingValue); 
-            setComentario(comentario);   
+            setRatingValue(ratingValue);
+            setComentario(comentario);
         } else {
-            setRatingValue(0);  
+            setRatingValue(0);
             setComentario('');
         }
         setOpenRatingDialog(true);
@@ -113,48 +152,6 @@ const Configuracao = () => {
             setOpenSnackbar(true);
         }
         handleCloseDialog();
-    };
-
-    const handleRatingSubmit = async () => {
-        const data = {
-            nota: ratingValue,
-            comentario: comentario,
-            pacienteId: pacienteId,
-        };
-
-        console.log("Avaliação enviada:", data);
-
-        try {
-            const response = await fetch("http://localhost:8080/psicuida-api/v1/avaliacoes", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(data),
-            });
-
-            if (response.ok) {
-                setSnackbarMessage('Obrigado pela avaliação');
-                setSnackbarSeverity('success');
-                setOpenSnackbar(true);
-                setRatingValue(0);
-                setComentario('');
-                setAlreadyReviewed(true); 
-                handleCloseRatingDialog();
-                setTimeout(() => {
-                    setOpenSnackbar(false);
-                }, 2000);
-            } else {
-                setSnackbarMessage('Erro ao enviar avaliação');
-                setSnackbarSeverity('error');
-                setOpenSnackbar(true);
-            }
-        } catch (error) {
-            console.error("Erro no envio:", error);
-            setSnackbarMessage('Erro ao enviar avaliação');
-            setSnackbarSeverity('error');
-            setOpenSnackbar(true);
-        }
     };
 
     return (
@@ -211,7 +208,7 @@ const Configuracao = () => {
                         fontSize: '17px',
                         display: 'flex',
                         justifyContent: 'space-between',
-                        alignItems: 'center',
+                        alignItems: 'center'
                     }}
                     onClick={handleOpenRatingDialog}
                     endIcon={<StarIcon />}
@@ -267,7 +264,7 @@ const Configuracao = () => {
                         <Button onClick={handleCloseRatingDialog} color="primary">
                             Cancelar
                         </Button>
-                        <Button onClick={handleRatingSubmit} color="secondary" disabled={!ratingValue}>
+                        <Button onClick={handleSubmit} color="secondary" disabled={!ratingValue}>
                             Enviar Avaliação
                         </Button>
                     </DialogActions>
@@ -285,8 +282,8 @@ const Configuracao = () => {
                 </DialogTitle>
                 <DialogContent>
                     <Typography variant="body1">
-                    Você tem certeza de que deseja excluir sua conta? Esta ação não pode ser desfeita. 
-                    No entanto, suas perguntas e respostas no fórum permanecerão, mas serão exibidas de forma anônima.
+                        Você tem certeza de que deseja excluir sua conta? Esta ação não pode ser desfeita.
+                        No entanto, suas perguntas e respostas no fórum permanecerão, mas serão exibidas de forma anônima.
                     </Typography>
                 </DialogContent>
                 <DialogActions>
