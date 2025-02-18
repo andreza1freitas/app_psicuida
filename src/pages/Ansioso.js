@@ -50,7 +50,6 @@ const Ansioso = () => {
 
         {/* vídeo do YouTube */}
         <Box display="flex" flexDirection="column" alignItems="center" mt={4} gap={4}>
-          {/* Primeiro vídeo */}
           <Card sx={{ width: '100%', maxWidth: 600 }}>
             <CardContent>
               <Box sx={{ marginTop: 2 }}>
@@ -76,37 +75,6 @@ const Ansioso = () => {
                   underline="always"
                 >
                   OUÇA QUANDO ESTIVER NUMA CRISE DE ANSIEDADE
-                </Link>
-              </Typography>
-            </CardContent>
-          </Card>
-
-          {/* Segundo vídeo */}
-          <Card sx={{ width: '100%', maxWidth: 600 }}>
-            <CardContent>
-              <Box sx={{ marginTop: 2 }}>
-                <iframe
-                  width="100%"
-                  height="200"
-                  src="https://www.youtube.com/embed/1fYt92gSJ_U"
-                  title="MINDFULNESS: ANSIEDADE ZERO (MEDITAÇÃO GUIADA)"
-                  style={{ border: 'none' }}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-              </Box>
-              <Typography
-                variant="caption"
-                align="center"
-                sx={{ marginTop: '15px', fontWeight: 'bold', display: 'block' }}
-              >
-                <Link
-                  href="https://www.youtube.com/embed/1fYt92gSJ_U"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  underline="always"
-                >
-                  MINDFULNESS: ANSIEDADE ZERO (MEDITAÇÃO GUIADA)
                 </Link>
               </Typography>
             </CardContent>

@@ -10,10 +10,9 @@ const ConteudoEducacional = () => {
     },
     {
       title: 'Histórias de Sucesso',
-      description: 'Inspire-se com histórias de superação e resiliência.',
+      description: 'Inspire-se com histórias de superação.',
       image: '/assets/img/imagem-sucesso.jpg',
     },
-
   ];
 
   const videos = [
@@ -41,7 +40,7 @@ const ConteudoEducacional = () => {
         Artigos
       </Typography>
 
-      <Box display="flex" flexWrap="wrap" justifyContent="space-between" gap={2}>
+      <Box display="flex" flexWrap="wrap" justifyContent="center" gap={3}>
         {artigos.map((artigo, index) => (
           <Box key={index} flexBasis={{ xs: '100%', sm: '48%', md: '30%' }} mb={4}>
             <Card>
@@ -66,7 +65,7 @@ const ConteudoEducacional = () => {
         Vídeos Informativos
       </Typography>
 
-      <Box display="flex" flexWrap="wrap" justifyContent="space-between" gap={2}>
+      <Box display="flex" flexWrap="wrap" justifyContent="center" gap={3}>
         {videos.map((video, index) => (
           <Box key={index} flexBasis={{ xs: '100%', sm: '48%', md: '30%' }} mb={4}>
             <Card>
@@ -93,6 +92,7 @@ const ConteudoEducacional = () => {
           </Box>
         ))}
       </Box>
+      
     </Container>
   );
 };

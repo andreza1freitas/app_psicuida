@@ -15,14 +15,13 @@ const Configuracao = () => {
     const [snackbarMessage, setSnackbarMessage] = useState('');
     const [snackbarSeverity, setSnackbarSeverity] = useState('success');
     const [openRatingDialog, setOpenRatingDialog] = useState(false);
-    const [ratingValue, setRatingValue] = useState(0); //Avaliacao
+    const [ratingValue, setRatingValue] = useState(0); 
     const [comentario, setComentario] = useState('');
-    const [alreadyReviewed, setAlreadyReviewed] = useState(false); //Já Avaliado
-
+    const [alreadyReviewed, setAlreadyReviewed] = useState(false); 
     const pacienteId = useSelector((state) => state.user.userId);
 
-    // UseEffect para verificar se o paciente já avaliou o aplicativo
     useEffect(() => {
+        // Verifica se o paciente já avaliou quando o diálogo de avaliação for aberto
         if (openRatingDialog) {
             const checkReviewStatus = async () => {
                 try {
@@ -32,11 +31,11 @@ const Configuracao = () => {
 
                     if (pacienteAvaliacao) {
                         setAlreadyReviewed(true);
-                        setRatingValue(pacienteAvaliacao.nota);  // Ajusta o valor da avaliação
-                        setComentario(pacienteAvaliacao.comentario);  // Ajusta o comentário
+                        setRatingValue(pacienteAvaliacao.nota);  
+                        setComentario(pacienteAvaliacao.comentario); 
                     } else {
                         setAlreadyReviewed(false);
-                        setRatingValue(0);  // Se não houver avaliação, limpa os valores
+                        setRatingValue(0);  
                         setComentario('');
                     }
                 } catch (error) {
@@ -48,29 +47,43 @@ const Configuracao = () => {
         }
     }, [openRatingDialog, pacienteId]);
 
-    const handleSubmit = async () => {
-        const avaliacaoData = {
+    // Verifica se o paciente já fez uma avaliação e, caso tenha, preenche os campos.
+    const handleOpenRatingDialog = () => {
+        if (alreadyReviewed) {
+            setRatingValue(ratingValue); 
+            setComentario(comentario);   
+        } else {
+            setRatingValue(0);           
+            setComentario('');           
+        }
+        setOpenRatingDialog(true);
+    };
+
+    const handleRatingSubmit = async () => {
+        const data = {
             nota: ratingValue,
             comentario: comentario,
-            paciente: { id: pacienteId }, 
+            paciente: {
+                id: pacienteId  
+            }
         };
-
+        
         try {
             const response = await fetch("http://localhost:8080/psicuida-api/v1/avaliacao", {
-                method: "POST",
+                method: "PUT",
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify(avaliacaoData),
+                body: JSON.stringify(data),
             });
-
+    
             if (response.ok) {
                 setSnackbarMessage('Obrigado pela avaliação');
                 setSnackbarSeverity('success');
                 setOpenSnackbar(true);
                 setRatingValue(0);
                 setComentario('');
-                setAlreadyReviewed(true);
+                setAlreadyReviewed(true); // Marca como já avaliado após enviar
                 handleCloseRatingDialog();
                 setTimeout(() => {
                     setOpenSnackbar(false);
@@ -108,18 +121,6 @@ const Configuracao = () => {
         setOpenSnackbar(false);
     };
 
-    const handleOpenRatingDialog = () => {
-        // Verifica se o paciente já fez uma avaliação e, caso tenha, preenche os campos.
-        if (alreadyReviewed) {
-            setRatingValue(ratingValue);
-            setComentario(comentario);
-        } else {
-            setRatingValue(0);
-            setComentario('');
-        }
-        setOpenRatingDialog(true);
-    };
-
     const handleCloseRatingDialog = () => {
         setOpenRatingDialog(false);
     };
@@ -153,6 +154,7 @@ const Configuracao = () => {
         }
         handleCloseDialog();
     };
+
 
     return (
         <Container
@@ -208,7 +210,7 @@ const Configuracao = () => {
                         fontSize: '17px',
                         display: 'flex',
                         justifyContent: 'space-between',
-                        alignItems: 'center'
+                        alignItems: 'center',
                     }}
                     onClick={handleOpenRatingDialog}
                     endIcon={<StarIcon />}
@@ -264,7 +266,7 @@ const Configuracao = () => {
                         <Button onClick={handleCloseRatingDialog} color="primary">
                             Cancelar
                         </Button>
-                        <Button onClick={handleSubmit} color="secondary" disabled={!ratingValue}>
+                        <Button onClick={handleRatingSubmit} color="secondary" disabled={!ratingValue}>
                             Enviar Avaliação
                         </Button>
                     </DialogActions>
@@ -277,13 +279,13 @@ const Configuracao = () => {
                 aria-labelledby="alert-dialog-title"
                 aria-describedby="alert-dialog-description"
             >
-                <DialogTitle id="alert-dialog-title" sx={{ fontWeight: 'bold' }}>
+                <DialogTitle id="alert-dialog-title">
                     {"Excluir Conta"}
                 </DialogTitle>
                 <DialogContent>
                     <Typography variant="body1">
-                        Você tem certeza de que deseja excluir sua conta? Esta ação não pode ser desfeita.
-                        No entanto, suas perguntas e respostas no fórum permanecerão, mas serão exibidas de forma anônima.
+                        Você realmente deseja excluir sua conta? Esta ação não pode ser desfeita,
+                        mas suas perguntas e respostas no fórum continuarão anonimamente.
                     </Typography>
                 </DialogContent>
                 <DialogActions>
