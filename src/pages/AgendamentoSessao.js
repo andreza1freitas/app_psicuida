@@ -200,7 +200,7 @@ const AgendamentoSessao = () => {
 
     return (
         <Container
-            maxWidth="sm"
+            maxWidth="lg"
             style={{
                 padding: '20px',
                 borderRadius: '10px',

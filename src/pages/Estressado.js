@@ -47,39 +47,8 @@ const Estressado = () => {
                     Cuide de si, seu bem-estar é a prioridade.
                 </Typography>
 
-                {/* Vídeos do YouTube */}
+                {/* Vídeo do YouTube */}
                 <Box display="flex" flexDirection="column" alignItems="center" mt={4} gap={4}>
-
-                    <Card sx={{ width: '100%', maxWidth: 600 }}>
-                        <CardContent>
-                            <Box sx={{ marginTop: 2 }}>
-                                <iframe
-                                    width="100%"
-                                    height="200"
-                                    src="https://www.youtube.com/embed/nnMaBBP3rEk"
-                                    title="Vídeo sobre estresse"
-                                    style={{ border: 'none' }}
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowFullScreen
-                                ></iframe>
-                            </Box>
-                            <Typography
-                                variant="caption"
-                                align="center"
-                                sx={{ marginTop: '15px', fontWeight: 'bold', display: 'block' }}
-                            >
-                                <Link
-                                    href="https://www.youtube.com/watch?v=nnMaBBP3rEk"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    underline="always"
-                                >
-                                    LIMPAR RAIVA E DISSOLVER STRESS - Frequência Binaural Alpha 10hz
-                                </Link>
-                            </Typography>
-                        </CardContent>
-                    </Card>
-
                     <Card sx={{ width: '100%', maxWidth: 600 }}>
                         <CardContent>
                             <Box sx={{ marginTop: 2 }}>
