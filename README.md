@@ -1,26 +1,22 @@
-# PROJETO INTEGRADOR: ANÁLISE DE SOLUÇÕES INTEGRADAS PARA ORGANIZAÇÕES
+# PsiCuida ![logo](public/assets/img/logo.webp)
 
-## Plataforma Mobile - PsiCuida
+O **PsiCuida** é uma plataforma acessível de suporte psicológico, voltada para pessoas que enfrentam ansiedade, depressão ou vícios que afetam sua rotina. Muitas pessoas não buscam ajuda por falta de tempo, acessibilidade ou preconceito, e o **PsiCuida** tem como principal objetivo facilitar o primeiro contato com psicólogos ou psiquiatras por meio de sessões virtuais. 
+<br> 
 
-O aplicativo **PsiCuida** é uma plataforma acessível de suporte psicológico, voltada para pessoas que enfrentam ansiedade, depressão ou vícios que afetam sua rotina. Muitas pessoas não buscam ajuda por falta de tempo, acessibilidade ou preconceito, e o **PsiCuida** tem como principal objetivo facilitar o primeiro contato com psicólogos ou psiquiatras por meio de sessões virtuais. 
-<br><br> 
-Além disso, o app oferece diversas ferramentas de autoajuda, como:
-
-- Meditação e exercícios de respiração;
-- Diário emocional para registro de sentimentos diários;
-- Agendamento de sessões com psicólogos e psiquiatras;
-- Fórum de apoio para interação com outros usuários.
+## ✅ Funcionalidades
+O aplicativo oferece diversas ferramentas de autoajuda, incluindo:
+- **Meditação e exercícios de respiração:** Para auxiliar no controle da ansiedade e do estresse.
+- **Diário emocional:** Registro de sentimentos diários para acompanhamento da saúde mental.
+- **Agendamento de Sessões:** Marcação de consultas com psicólogos e psiquiatras de forma simples e rápida
+- **Fórum de apoio:** Espaço para interação entre usuários, troca de experiências e apoio emocional.
 
 A proposta do **PsiCuida** é criar uma ponte essencial para quem precisa de apoio emocional, promovendo a saúde mental e o bem-estar de forma prática e segura.
 <br>
+<br>
 
-## Tecnologias Utilizadas
-
-### Frontend (Desenvolvido no Visual Studio Code):
-
-O front-end foi desenvolvido utilizando **React** com **Material-UI** e outras bibliotecas para otimização e funcionalidades. As principais dependências incluem:
-
-- **Framework**: React
+## 🚀 Tecnologias Utilizadas
+O projeto foi desenvolvido no **Visual Studio Code** e utilizando as seguintes tecnologias e bibliotecas:
+- **Framework**: React.js
 - **Gerenciamento de estado**: Redux Toolkit
 - **UI Components**: Material-UI (`@mui/material`, `@mui/icons-material`)
 - **Roteamento**: React Router Dom
@@ -30,8 +26,9 @@ O front-end foi desenvolvido utilizando **React** com **Material-UI** e outras b
 - **Validação e máscaras de input**: React-Input-Mask, React-Text-Mask
 
 Para ver todas as dependências, consulte o arquivo `package.json` do projeto.
-
-## Instalação e Execução do Projeto
+<br>
+<br>
+## ⚙️ Instalação e Execução do Projeto
 
 ### Pré-requisitos:
 
@@ -39,7 +36,7 @@ Para ver todas as dependências, consulte o arquivo `package.json` do projeto.
 - **npm** (Node Package Manager) ou **Yarn**
 - **Visual Studio Code** ou outro editor de código de sua preferência
 
-### Passo a passo:
+### 📌 Passo a passo:
 
 1. Clone o repositório:
 
@@ -70,8 +67,14 @@ Para ver todas as dependências, consulte o arquivo `package.json` do projeto.
 
    ```bash
    npm run build
+<br> 
 
-## Integrantes do Grupo
+## 🎨 Protótipo no Figma
+- **Imagens do Protótipo:** [Clique aqui](https://www.figma.com/design/JmINudi5tXwlBq6Hz9iz5i/Psicuida_App?node-id=0-1&t=zLHWWYwrCjWh4bc4-1)
+- **Protótipo Interativo:** [Clique aqui](https://www.figma.com/proto/JmINudi5tXwlBq6Hz9iz5i/Psicuida_App?node-id=3-3&starting-point-node-id=3%3A3&t=mmAkIZBmOcJbGLSW-1)  
+<br>
+ 
+## 👥 Integrantes do Grupo
 
 - Andreza Azevedo Gomes de Freitas
 
@@ -83,7 +86,14 @@ Para ver todas as dependências, consulte o arquivo `package.json` do projeto.
 
 - Thayna Englidy da Silva
 
-## Licença
+<br>
+
+## 🤝 Contribuição
+Ficamos felizes com contribuições! Sinta-se à vontade para abrir um pull request ou relatar problemas na aba de **Issues**.
+
+<br>
+
+## 📜 Licença
 Este projeto é de uso acadêmico e não possui uma licença pública definida. Caso queira utilizá-lo, consulte os autores para mais informações.
 
 
