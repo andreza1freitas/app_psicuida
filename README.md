@@ -72,8 +72,18 @@ Para ver todas as dependências, consulte o arquivo `package.json` do projeto.
 ## 🎨 Protótipo no Figma
 - **Imagens do Protótipo:** [Clique aqui](https://www.figma.com/design/JmINudi5tXwlBq6Hz9iz5i/Psicuida_App?node-id=0-1&t=zLHWWYwrCjWh4bc4-1)
 - **Protótipo Interativo:** [Clique aqui](https://www.figma.com/proto/JmINudi5tXwlBq6Hz9iz5i/Psicuida_App?node-id=3-3&starting-point-node-id=3%3A3&t=mmAkIZBmOcJbGLSW-1)  
+
 <br>
- 
+
+## 🖥️ Landing Page (Submódulo)
+A landing page deste projeto está disponível no repositório:  
+🔗 [Landing Page do Projeto](https://github.com/andreza1freitas/landing-page-psicuida/tree/ec744878e520358f0434e3683630ad4c31275f8b)
+
+Você também pode acessar a página online em:  
+🔗 [Projeto Live](https://andreza1freitas.github.io/landing-page-psicuida/)
+
+<br>
+
 ## 👥 Integrantes do Grupo
 
 - Andreza Azevedo Gomes de Freitas
