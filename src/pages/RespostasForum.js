@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { Container, Typography, Button, TextField, IconButton, Dialog, DialogTitle, DialogContent, DialogActions, Box } from '@mui/material';
+import { Container, Typography, Button, TextField, IconButton, Dialog, DialogContent, DialogActions, Box } from '@mui/material';
 import { useSelector } from 'react-redux';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import axios from 'axios';
@@ -84,11 +84,12 @@ const RespostasForum = () => {
                 height: '60px',
                 display: 'flex',
                 alignItems: 'center',
-                paddingX: 2,
-                position: 'fixed',
-                top: 0,
-                left: 0,
-                zIndex: 1100
+                // verificar depois
+                // paddingX: 2,
+                // position: 'fixed',
+                // top: 0,
+                // left: 0,
+                // zIndex: 1100
             }}>
                 <IconButton onClick={handleBack} sx={{ color: 'white' }}>
                     <ArrowBackIcon />
@@ -159,7 +160,6 @@ const RespostasForum = () => {
                         </Button>
 
                         <Dialog open={open} onClose={handleDialogClose} maxWidth="sm" fullWidth>
-                            <DialogTitle>Responder</DialogTitle>
                             <DialogContent>
                                 <TextField
                                     autoFocus
